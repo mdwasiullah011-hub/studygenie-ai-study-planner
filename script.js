@@ -3,17 +3,13 @@ function getStudyAdvice(subject) {
 
     if (s.includes("math")) {
         return "practice numerical problems, revise formulas, and solve previous year questions.";
-    } 
-    else if (s.includes("history")) {
+    } else if (s.includes("history")) {
         return "revise timelines, important events, and practice descriptive answers.";
-    } 
-    else if (s.includes("physics")) {
+    } else if (s.includes("physics")) {
         return "focus on core concepts, derivations, and numerical problem-solving.";
-    } 
-    else if (s.includes("chemistry")) {
+    } else if (s.includes("chemistry")) {
         return "revise reactions, formulas, and practice problem-based questions.";
-    } 
-    else {
+    } else {
         return "focus on understanding concepts, revising notes, and practicing questions.";
     }
 }
@@ -33,19 +29,18 @@ function generatePlan() {
     const examDate = new Date(examDateInput);
     const today = new Date();
 
-    const daysLeft = Math.ceil((examDate - today) / (1000 * 60 * 60 * 24));
+    const timeDiff = examDate.getTime() - today.getTime();
+    const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
 
     if (daysLeft <= 0) {
         output.innerHTML = "Exam date must be in the future.";
         return;
     }
 
-    let planHTML = `
-        <p><strong>Study Plan Overview</strong></p>
-        <p>You have <strong>${daysLeft} days</strong> until your exam.</p>
-        <p>Daily study time: <strong>${hoursInput} hours</strong></p>
-        <ul>
-    `;
+    let planHTML = "<p><strong>Study Plan Overview</strong></p>";
+    planHTML += `<p>You have <strong>${daysLeft}</strong> days until your exam.</p>`;
+    planHTML += `<p>Daily study time: <strong>${hoursInput} hours</strong></p>`;
+    planHTML += "<ul>";
 
     subjects.forEach((subject, index) => {
         const advice = getStudyAdvice(subject);
