@@ -55,8 +55,8 @@ function generatePlan() {
     planHTML += "</ul>";
     output.innerHTML = planHTML;
 }
-function solveDoubt() {
-    const question = document.getElementById("doubtInput").value;
+ function solveDoubt() {
+    const question = document.getElementById("doubtInput").value.trim().toLowerCase();
     const output = document.getElementById("doubtOutput");
 
     if (!question) {
@@ -64,20 +64,55 @@ function solveDoubt() {
         return;
     }
 
-    const q = question.toLowerCase();
-
     let answer = "";
 
-    if (q.includes("photosynthesis")) {
-        answer = "Photosynthesis is the process by which green plants make their own food using sunlight, carbon dioxide, and water.";
-    } else if (q.includes("newton")) {
-        answer = "Newton’s First Law states that an object will remain at rest or in uniform motion unless acted upon by an external force.";
-    } else if (q.includes("ohm")) {
-        answer = "Ohm’s Law states that the current through a conductor is directly proportional to the voltage across it, provided temperature remains constant.";
-    } else if (q.includes("velocity")) {
-        answer = "Velocity is speed in a given direction, whereas speed only tells how fast an object is moving.";
-    } else {
-        answer = "This is a conceptual question. The AI analyzes the topic and provides a simplified explanation to help the student understand it clearly.";
+    if (question.includes("photosynthesis")) {
+        answer = "Photosynthesis is the process by which green plants prepare their own food using sunlight, carbon dioxide, and water. It occurs in the presence of chlorophyll and releases oxygen as a by-product.";
+    }
+    else if (question.includes("newton")) {
+        answer = "Newton’s First Law of Motion states that an object will remain at rest or continue to move with uniform speed in a straight line unless acted upon by an external force.";
+    }
+    else if (question.includes("ohm")) {
+        answer = "Ohm’s Law states that the current flowing through a conductor is directly proportional to the voltage across it, provided the temperature remains constant. Mathematically, V = IR.";
+    }
+    else if (question.includes("speed") && question.includes("velocity")) {
+        answer = "Speed is the distance travelled per unit time, whereas velocity is the speed of an object in a particular direction.";
+    }
+    else if (question.includes("differentiation")) {
+        answer = "Differentiation is a mathematical process used to find the rate of change of a quantity with respect to another quantity. It is mainly used to find slope, speed, and maximum or minimum values.";
+    }
+    else if (question.includes("integration")) {
+        answer = "Integration is the reverse process of differentiation. It is used to find areas, total quantities, and accumulated values.";
+    }
+    else if (question.includes("quadratic")) {
+        answer = "A quadratic equation is a polynomial equation of degree two, usually written in the form ax² + bx + c = 0, where a ≠ 0.";
+    }
+    else if (question.includes("pythagoras")) {
+        answer = "Pythagoras theorem states that in a right-angled triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides.";
+    }
+    else if (question.includes("french revolution")) {
+        answer = "The French Revolution was a major political and social uprising in France from 1789 to 1799 that ended monarchy and promoted liberty, equality, and fraternity.";
+    }
+    else if (question.includes("world war 1")) {
+        answer = "World War 1 was caused by militarism, alliances, imperialism, and nationalism, along with the assassination of Archduke Franz Ferdinand in 1914.";
+    }
+    else if (question.includes("mahatma gandhi")) {
+        answer = "Mahatma Gandhi was the leader of India’s freedom struggle who followed the principles of non-violence and truth to achieve independence from British rule.";
+    }
+    else if (question.includes("industrial revolution")) {
+        answer = "The Industrial Revolution was the period during which hand production methods were replaced by machines, leading to industrial growth and urbanization.";
+    }
+    else if (question.includes("democracy")) {
+        answer = "Democracy is a form of government in which power is held by the people, either directly or through elected representatives.";
+    }
+    else if (question.includes("climate change")) {
+        answer = "Climate change refers to long-term changes in temperature and weather patterns, mainly caused by human activities such as burning fossil fuels.";
+    }
+    else if (question.includes("artificial intelligence")) {
+        answer = "Artificial Intelligence is a branch of computer science that enables machines to perform tasks that normally require human intelligence, such as learning and decision-making.";
+    }
+    else {
+        answer = "This question is outside the current prototype knowledge base. In the full version, the AI will generate a detailed answer using a large language model.";
     }
 
     output.innerHTML = answer;
