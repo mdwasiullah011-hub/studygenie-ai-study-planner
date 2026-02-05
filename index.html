@@ -8,26 +8,38 @@
 <body>
 
     <h1>StudyGenie</h1>
-    <p>AI-Powered Study Planner & Doubt Solver</p>
+<p>AI-Powered Study Planner & Doubt Solver</p>
 
-    <hr>
+<hr>
 
-    <h2>Study Planner</h2>
+<h2>Study Planner</h2>
 
-    <label>Subjects (comma separated)</label><br>
-    <input type="text" id="subjects" placeholder="Math, Physics, Chemistry"><br><br>
+<label>Subjects (comma separated)</label><br>
+<input type="text" id="subjects" placeholder="Maths, History"><br><br>
 
-    <label>Exam Date</label><br>
-    <input type="date" id="examDate"><br><br>
+<label>Exam Date</label><br>
+<input type="date" id="examDate"><br><br>
 
-    <label>Daily Study Hours</label><br>
-    <input type="number" id="hours" placeholder="3"><br><br>
+<label>Daily Study Hours</label><br>
+<input type="number" id="hours" placeholder="8"><br><br>
 
-    <button onclick="generatePlan()">Generate Study Plan</button>
+<button onclick="generatePlan()">Generate Study Plan</button>
 
-    <h3>Your Study Plan</h3>
-    <div id="planOutput"></div>
+<h3>Your Study Plan</h3>
+<div id="planOutput"></div>
 
-    <script src="script.js"></script>
+<hr>
+
+<h2>AI Doubt Solver</h2>
+
+<label>Ask your doubt</label><br>
+<textarea id="doubtInput" rows="4" cols="40" placeholder="Type your question here..."></textarea><br><br>
+
+<button onclick="solveDoubt()">Ask AI</button>
+
+<h3>AI Answer</h3>
+<div id="doubtOutput"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
