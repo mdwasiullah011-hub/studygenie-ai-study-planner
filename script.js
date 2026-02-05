@@ -106,7 +106,7 @@ function generatePlan() {
         answer = "Democracy is a form of government in which power is held by the people, either directly or through elected representatives.";
     }
     else if (question.includes("priyanshu")) {
-        answer = "priyanshu sabse bada gandu h, aur chakka jaisa harkat karta h.";
+        answer = "priyanshu sabse bada gandu h, aur chakka jaisa harkat karta h, maaro usko.";
     }
     else if (question.includes("artificial intelligence")) {
         answer = "Artificial Intelligence is a branch of computer science that enables machines to perform tasks that normally require human intelligence, such as learning and decision-making.";
